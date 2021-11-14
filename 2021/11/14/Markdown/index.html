@@ -222,6 +222,18 @@
     </header>                
 </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>
+      var userAgent = window.navigator.userAgent;
+      bubbly({
+        blur: 1,
+        bubbleFunc: () = > `hsla(${Math.random() * 50}, 100%, 50%, .3)`,
+        bubbles: userAgent.match(/AppleWebKit.*Mobile.*/) ? 15 : 30,
+        colorStart: "#fff4e6",
+        colorStop: "#ffe9e4",
+        compose: "source-over"
+      });
+    </script>
     <div class="mid-col">
       <nav id="mobile-nav">
       <div class="overlay">
@@ -712,34 +724,6 @@
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-  <script>
-    $(document).ready(function() {
-      var iPad = window.navigator.userAgent.indexOf('iPad');
-      if (iPad > -1) {
-        let bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-        let bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-        $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-      } else if ($(".left-col").css("display") === "none") {
-        $("body").css({
-          "background-image": "url(/background/mobile.jpg)",
-          "background-repeat": "no-repeat",
-          "background-attachment": "fixed",
-          "background-size": "cover"
-        })
-      } else {
-        var backgroundnum = 5;
-        var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-        $("body").css({
-          "background": backgroundimg,
-          "background-position": "0% 80%",
-          "background-attachment": "fixed",
-          "background-size": "cover"
-        })
-      }
-    })
-  </script>
-
-
 
 
 
@@ -773,5 +757,5 @@
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
